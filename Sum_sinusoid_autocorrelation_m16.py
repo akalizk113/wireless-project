@@ -10,12 +10,11 @@ fm = fmT; # fm
 num = 3 ;
 Omgp = 1; # Set average power as 1
 sample_num = 30000; # channel output data point
-M = 8;
+M = 16;
 m = (np.arange(1, M+1));
 N = 4*M+2;
 n = (np.arange(1, N +1))
 pi = 3.14159265
-theta_n = 2*pi*n/N;
 theta_n = 2*pi*n/N; 
 theta_m = theta_n[0:M];
 beta_m = np.tile(pi*m/M,(num,1));
@@ -93,7 +92,7 @@ S=sc.jv(0,k); # Ideal autocorrelation
 
 plt.plot(np.multiply(fm[0], np.arange(0, tau[0] + 1)), phi1[0]/np.abs(phi1[0][0]), 'r',fm[1]*(np.arange(0, tau[1] + 1)), phi2[0]/abs(phi2[0][0]), 'k',fm[2]*(np.arange(0, tau[2] + 1)), phi3[0]/abs(phi3[0][0]),'b',fm[0]*(np.arange(0, tau[0] + 1)), S,'m--');
 
-plt.title('Autocorrelation of Sum of Sinusoids Method for M=8');
+plt.title('Autocorrelation of Sum of Sinusoids Method for M=16');
 plt.xlabel('f_m\tau');
 plt.ylabel('Autocorrelation');
 plt.legend(['fmT=0.01','fmT=0.1','fmT=1','Ideal']);
